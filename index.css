@@ -1,10 +1,13 @@
 * {
+    color: #263138;
     font-family: 'Montserrat',sans-serif; /*font added in head */
     box-sizing: border-box;
     margin: 0; /*remoção de borda natural do navegador */
     padding: 0;
     font-weight: 600;
+    gap: 70px;
 }
+
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
@@ -17,9 +20,14 @@
     }
 }
 
+.container {
+    position: relative;
+}
 
-body{
-    color: #263138;
+img {
+    max-width: 100%;
+    border: 10px double #ff9a6c;
+    border-radius: 10px;
 }
 
 header {
@@ -39,6 +47,12 @@ header a {
     text-decoration: none;
     font-size: 1.5em;
     transition: 0.5s;
+}
+
+header {
+    position: sticky;
+    top: 00;
+    bottom: 120px;
 }
 
 header nav a:hover{
@@ -78,6 +92,7 @@ h2 {
     text-decoration: none;
     color: white;
     transition: 0.3s;
+    box-shadow: 1px 1px 7px 3px grey;
 }
 
 .botao:active {
@@ -97,6 +112,7 @@ h2 {
     left: 0;
     width: 100%;
     z-index: -10; 
+    border: none;
 }
 
 #clinica, 
@@ -128,6 +144,11 @@ h2 {
 .duvida {
     position: relative;
 }
+
+.duvida > img {
+    border: none;
+}
+
 .duvida h3 {
     border: 2px solid #FF725E;
     border-radius: 8px;
@@ -168,6 +189,30 @@ h2 {
     background-color: white;
 }
 
+.whatsapp {
+    position: sticky;
+    bottom: 100px;
+    z-index: 1000;
+}
+.whatsapp img {
+    border: none;
+    position: absolute;
+    background-color: #ff9a6c;
+    border-radius: 180%;
+    height: 80px;
+    width: 80px;  
+    right: 30px;
+    margin-bottom: -20px;
+    margin-top: 10px;
+    outline: none;
+}
+
+/* .whatsapp img:hover {
+    outline: 10px solid #ff9a6c;
+    transition: 3s;
+    transform: ease-in-out;
+} */
+
 footer {
     background-color: rgba(255, 152, 108, 0.25);
     display: flex;
@@ -181,6 +226,7 @@ footer .titulo {
     display: block;
     font-weight: 600;
     margin-bottom: 24px;
+    border: none;
 }
 
 footer nav a {
@@ -221,4 +267,39 @@ footer nav a:hover,
     color: #ff9a6c;
     text-decoration: none;
     transition: 0.5s;
+}
+
+@media (max-width: 1200px) {
+
+    h1, h2, h3 {
+        text-align: center;
+        padding: 5%;
+    }
+
+
+    nav {
+        display: none;
+        }
+
+    .botao, .botao-transparente {
+        display: block;
+        text-align: center;
+        margin: 50px;
+    }
+
+     section {
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+
+
+    .promo{
+        display: none;
+    }
+
+
 }
